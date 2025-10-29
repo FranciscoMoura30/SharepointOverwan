@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Saudação</title>
+</head>
+<body>
+  <h1 id="greeting">Olá!</h1>
+
+  <script>
+    const hour = new Date().getHours();
+    const greetingText = hour < 12 ? 'Bom dia' : 'Boa tarde';
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get('user') || '';
+    document.getElementById("greeting").textContent = `${greetingText}${user ? ', ' + user : ''}!`;
+  </script>
+</body>
+</html>

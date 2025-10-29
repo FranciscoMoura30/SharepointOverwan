@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saudação</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: transparent;
+    }
+    .greeting {
+      padding: 18px 24px;
+      font-size: 28px;
+      font-weight: 600;
+      color: #0f172a;
+      text-align: left;
+    }
+    @media (prefers-color-scheme: dark) {
+      .greeting { color: #ffffff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="greeting" id="greeting">Olá</div>
+
+  <script>
+    const now = new Date();
+    const hour = now.getHours();
+    let greetingText = "Olá";
+    if (hour < 12) greetingText = "Bom dia";
+    else if (hour < 18) greetingText = "Boa tarde";
+    else greetingText = "Boa noite";
+
+    // Neste caso, o GitHub Pages não pode aceder ao nome do utilizador do SharePoint
+    // por isso mostramos apenas a saudação
+    document.getElementById("greeting").textContent = `${greetingText}!`;
+  </script>
+</body>
+</html>
